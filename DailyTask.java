@@ -2,7 +2,9 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 public class DailyTask extends Task{
-    public DailyTask(String taskHeading, TaskType type, String taskDescription, LocalDateTime dateTime) {
+
+
+    public DailyTask(String taskHeading, TaskType type, String taskDescription, LocalDateTime dateTime) throws IncorrectArgumentException {
         super(taskHeading, type, taskDescription, dateTime);
     }
 

@@ -10,11 +10,16 @@ public class Task {
     private  int id;
     private static int counter;
 
-    public Task(String taskHeading, TaskType type, String taskDescription, LocalDateTime dateTime) {
+    public Task(String taskHeading, TaskType type, String taskDescription, LocalDateTime dateTime) throws IncorrectArgumentException   {
+        if ((taskHeading.isBlank() || taskHeading.isEmpty()) || (type.name.isEmpty() || type.name.isBlank())
+                || (taskDescription.isBlank() || taskDescription.isEmpty()) || (dateTime == null)) {
+            throw new IncorrectArgumentException("не верные данные", "");
+        }
         this.taskHeading = taskHeading;
         this.type = type;
         this.taskDescription = taskDescription;
         this.dateTime = dateTime;
+
         id = counter++;
     }
 
