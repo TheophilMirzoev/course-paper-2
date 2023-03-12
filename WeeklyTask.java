@@ -2,7 +2,7 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 public class WeeklyTask extends  Task{
-    public WeeklyTask(String taskHeading, TaskType type, String taskDescription, LocalDateTime dateTime) {
+    public WeeklyTask(String taskHeading, TaskType type, String taskDescription, LocalDateTime dateTime)throws IncorrectArgumentException {
         super(taskHeading, type, taskDescription, dateTime);
     }
 
